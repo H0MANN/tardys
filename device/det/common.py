@@ -42,3 +42,8 @@ class Common():
             return False
         else:
             raise ValueError("INVARID INPUT")
+
+if __name__ == "__main__":
+    det = Common()
+    det.mysql.select_header(where={"fetch_timing": "INIT",
+                                                "inst_table_column_name": "!"})

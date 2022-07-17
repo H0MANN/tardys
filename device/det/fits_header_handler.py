@@ -129,6 +129,7 @@ class BaseHandler(threading.Thread):
 
     def run(self):
         try:
+            #infinite loop
             while 1:
                 if self.evt_interrupt.is_set() or self._stop_loop:
                     break
@@ -162,7 +163,9 @@ class BaseHandler(threading.Thread):
 
 
     def process_init(self):
+        #header_table(det)を消す
         self.mysql.drop_header_table()
+        #tar_header.detをtar_header.det_masterからコピーしてくる
         self.mysql.copy_from_header_master()
 
         self.logger.info("Initialized header table '{}'.".format(self.mysql.table_header))
@@ -268,7 +271,7 @@ class BasicHeaderHandler(BaseHandler):
             lines = self.mysql.execute(query)
         """
 
-            
+        #fetch_timingがtimeingに一致し、かつ、inst_table_column_nameがからでないところを選んで、  
         lines = self.mysql.select_header(where={"fetch_timing": timing,
                                                 "inst_table_column_name": "!"})
 
