@@ -1,0 +1,107 @@
+## Optical Arm		
+OPT_ARM	##TBW##	## defined in config.ini
+DET_CH	##TBW##	## defined in config.ini
+		
+		
+## Network Mount		
+CIFS_MOUNT	##TBW##	## written by DM
+		
+		
+## Server		
+DM_STATUS	##TBW##	## written by DM
+IDE_STATUS	##TBW##	## written by DM
+		
+		
+## HXRG Status		
+INITIALIZED	##TBW##	## written by DM
+POWERDOWN	##TBW##	## written by DM
+		
+		
+## Device IDs ##		
+M6_CMOS_ID	##TBW##	## defined in config.ini
+GESICA_ID	##TBW##	## defined in config.ini
+IRCA_ID	##TBW##	## defined in config.ini
+DETECTOR	##TBW##	## defined in config.ini
+		
+		
+## Raw data Directory ##		
+RAWDIR	##TBW##	## defined in config.ini
+		
+		
+## FITS Frame Numbers ##		
+FRAMEID	TRDA00000000	
+FRAMEID_ENG	TRDE00000000	
+EXP-ID	##TBW##	
+DSET-ID	##TBW##	
+DPOS-ID	##TBW##	
+		
+## DETCTOR SETTING		
+CLOCK_PATTERN	##TBW##	
+N_X	##TBW##	
+N_Y	##TBW##	
+N_CH	##TBW##	
+CODING	##TBW##	
+N_SAMPLE	##TBW##	
+N_SUR	##TBW##	
+N_OSAMPLE	##TBW##	
+N_RESET	##TBW##	
+EXP_TIME	##TBW##	
+SAMPLE_MODE	##TBW##	
+RESET_SUB	##TBW##	
+REF_SUB	##TBW##	
+		
+## Observing Times ##		
+T_OBS	##TBW##	
+T_PIX	##TBW##	
+T_OVH	##TBW##	
+T_CMD	##TBW##	
+		
+		
+## Required FITS cards ##		
+CDELT1	##TBW##	## defined in config.ini
+CDELT2	##TBW##	## defined in config.ini
+CTYPE1	##TBW##	## defined in config.ini
+CTYPE2	##TBW##	## defined in config.ini
+CUNIT1	##TBW##	## defined in config.ini
+CUNIT2	##TBW##	## defined in config.ini
+CRPIX1	##TBW##	## defined in config.ini
+CRPIX2	##TBW##	## defined in config.ini
+		
+CRVAL1	##TBW##	# pointing RA
+CRVAL2	##TBW##	# pointing Dec
+CD1_1	##TBW##	## defined in config.ini
+CD1_2	##TBW##	## defined in config.ini
+CD2_1	##TBW##	## defined in config.ini
+CD2_2	##TBW##	## defined in config.ini
+		
+LONPOLE	##TBW##	## defined in config.ini
+WCS-ORIG	##TBW##	## defined in config.ini
+DETPXSZ1	##TBW##	## defined in config.ini
+DETPXSZ2	##TBW##	## defined in config.ini
+"#DET-NSMP    ##TBW##  ## instead, refered bFS."		
+COADD	     ##TBW##	## defined in config.ini
+GAIN	##TBW##	## defined in config.ini
+PRD-MIN1	##TBW##	## defined in config.ini
+PRD-RNG1	##TBW##	## defined in config.ini
+PRD-MIN2	##TBW##	## defined in config.ini
+PRD-RNG2	##TBW##	## defined in config.ini
+EFP-MIN1	##TBW##	## defined in config.ini
+EFP-RNG1	##TBW##	## defined in config.ini
+EFP-MIN2	##TBW##	## defined in config.ini
+EFP-RNG2	##TBW##	## defined in config.ini
+BIN-FCT1	##TBW##	## defined in config.ini
+BIN-FCT2	##TBW##	## defined in config.ini
+		
+BSCALE	##TBW##	## defined in config.ini
+BZERO	##TBW##	## defined in config.ini
+BUNIT	##TBW##	## defined in config.ini
+		
+DISPAXIS	##TBW##	## defined in config.ini
+WAV-MIN	##TBW##	## defined in config.ini
+WAV-MAX	##TBW##	## defined in config.ini
+WAVELEN	##TBW##	## defined in config.ini
+
+
+
+
+        

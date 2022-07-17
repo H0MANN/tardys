@@ -1,0 +1,197 @@
+#id	date	header_keyword	header_value_type	header_value	format	unit	header_comment	obe_mode	fetch_timing	updater	inst_table_name	inst_table_column_name	messia6_header_keyword	ocs_param_name	python_method
+1		SIMPLE	bool	True	BOOLEAN		Standard FITS format	common	END	Messia6_Header			SIMPLE		
+2		BITPIX	int	-9999	%20d		Number of bits per pixel	common	END	Messia6_Header			BITPIX		
+3		NAXIS	int	-9999	%20d		Number of axes in frame	common	END	Messia6_Header			NAXIS		
+4		NAXIS1	int	-9999	%20d		Number of pixels in a row	common	END	Messia6_Header			NAXIS1		
+5		NAXIS2	int	-9999	%20d		Number of pixels in a column	common	END	Messia6_Header			NAXIS2		
+6		EXTEND	bool	True	BOOLEAN		Presence of FITS extension	common	END	Messia6_Header			EXTEND		
+100		COMMENT	str				++++++++++ TAO COMMON	common	INIT	FIX					
+200		COMMENT	str				--------- About This Data	common	INIT	FIX					
+201		DATASET	str	DS0000	%-20s		ID of an observation dataset	common	INIT	IntervalTaskSecond	observation	DATASET		FITS.TRD.DATASET	
+202		FRAMEID	str	TRDA00000000	%-12s		Image sequential number	common	INIT	ACQ_FRAME	det	FRAMEID			
+203		EXP-ID	str	TRDE00000000	%-12s		ID of the exposure this data was taken	common	INIT	ACQ_FRAME	det	EXP-ID			
+204		OBS-ALOC	str	STAND-BY	%-12s		Allocation mode (STAND-BY/OBSERVATION)	common	INIT	BOOTOBE	instrument	OBS-ALOC		FITS.TRD.OBS-ALOC	
+300		COMMENT	str				--------- Observation ID	common	INIT	FIX					
+301		OBSERVER	str	K.MOTOHARA, et al.	%-50s		Observers	common	INIT	BOOTOBE	observation	OBSERVER		FITS.TRD.OBSERVER	
+302		PROP-ID	str	o99999	%-8s		Proposal ID	common	INIT	BOOTOBE	observation	PROP-ID		FITS.TRD.PROP-ID	
+303		OBSERVAT	str	U Tokyo	%-20s		Observatory name	common	INIT	FIX	observation	OBSERVAT			
+304		TELESCOP	str	TAO	%-30s		Telescope name	common	INIT	BOOTOBE	observation	TELESCOP		FITS.TAO.TELESCOP	
+305		INSTRUME	str	TARdYS	%-20s		Instrument name	common	INIT	FIX	instrument	INSTRUME			
+306		INS-VER	str	TRD-H000C000T000F001	%-30s		Instrument version (H: Hardware, C: Control-sys, T=Det-sys (TAC), F=FITS header)	common	INIT	FIX	instrument	INS-VER			
+400		COMMENT	str				--------- Telescope Setting	common	INIT	FIX					
+401		FOC-POS	str	BENT CASSEGRAIN	%-12s		Focus where the instrument is attached	common	INIT	FIX	observation				
+402		TELFOCUS	str	BENT CASSEGRAIN	%-30s		Focus where a beam is reachable	common	INIT	BOOTOBE	observation	TELFOCUS		FITS.TAO.TELFOCUS	
+403		FOC-VAL	float	-9999	%20.3f	mm	Encoder value of the focus unit (mm)	common	INIT	IntervalTaskSecond	observation	FOC-VAL		FITS.TAO.FOC-VAL	
+404		INSROT	float	-9999	%20.3f	degree	Typical inst. rot. angle at exp.(degree)	common	MID	IntervalTaskSecond	observation	INSROT		FITS.TAO.INSROT	
+405		INR-STR	float	-9999	%20.3f	degree	Instrument Rotator angle at Start (degree)	common	STR	IntervalTaskSecond	observation	INSROT		FITS.TAO.INSROT	
+406		INR-END	float	-9999	%20.3f	degree	Instrument Rotator angle at end (degree)	common	END	IntervalTaskSecond	observation	INSROT		FITS.TAO.INSROT	
+407		INST-PA	float	-9999	%20.3f	degree	P.A. of Instrument flange (degree)	common	INIT	IntervalTaskSecond	observation	INST-PA		FITS.TAO.INST-PA	
+408		AUTOGUID	str	OFF	%-8s		Auto Guide ON/OFF	common	INIT	IntervalTaskSecond	observation	AUTOGUID		FITS.TAO.AUTOGUID	
+409		M2-TYPE	str	Opt	%-8s		Type of the Secondary Mirror (Opt/IR)	common	INIT	IntervalTaskSecond	observation	M2-TYPE		FITS.TAO.M2-TYPE	
+500		COMMENT	str				--------- Size, Coordinate, etc	common	INIT	FIX					
+501		CDELT1	float	-9999	%20.8f		X-scale projected on detector (CUNIT1/pix)	common	INIT	FIX	det	CDELT1			
+502		CDELT2	float	-9999	%20.8f		Y-scale projected on detector (CUNIT2/pix)	common	INIT	FIX	det	CDELT2			
+503		CTYPE1	str	RA---TAN	%-10s		Pixel coordinate system	common	INIT	FIX	det	CTYPE1			
+504		CTYPE2	str	DEC--TAN	%-10s		Pixel coordinate system	common	INIT	FIX	det	CTYPE2			
+505		CUNIT1	str	deg	%-10s		Units used in both CRVAL1 and CDELT1	common	INIT	FIX	det	CUNIT1			
+506		CUNIT2	str	deg	%-10s		Units used in both CRVAL2 and CDELT2	common	INIT	FIX	det	CUNIT2			
+507		CRPIX1	float	-9999	%20.1f	pixel	Reference position in X (pixel)	common	INIT	FIX	det	CRPIX1			
+508		CRPIX2	float	-9999	%20.1f	pixel	Reference position in Y (pixel)	common	INIT	FIX	det	CRPIX2			
+509		CRVAL1	float	-9999	%20.8f		Physical value of the reference pixel X	common	INIT	python	det	CRVAL1			get_CRVAL1
+510		CRVAL2	float	-9999	%20.8f		Physical value of the reference pixel Y	common	INIT	python	det	CRVAL2			get_CRVAL2
+511		CD1_1	float	-9999	%20.8f		Pixel coordinate translation matrix	common	INIT	python	det	CD1_1			get_CD1_1
+512		CD1_2	float	-9999	%20.8f		Pixel coordinate translation matrix	common	INIT	python	det	CD1_2			get_CD1_2
+513		CD2_1	float	-9999	%20.8f		Pixel coordinate translation matrix	common	INIT	python	det	CD2_1			get_CD2_1
+514		CD2_2	float	-9999	%20.8f		Pixel coordinate translation matrix	common	INIT	python	det	CD2_2			get_CD2_2
+515		LONPOLE	float	-9999	%20.1f	degree	North pole of standard system (degree)	IMAG	INIT	FIX	det	LONPOLE			
+516		BSCALE	float	-9999	%20.8f		Real=(fits-value)*BSCALE+BZERO	common	INIT	FIX	det	BSCALE			
+517		BZERO	float	-9999	%20.8f		Real=(fits-value)*BSCALE+BZERO	common	INIT	FIX	det	BZERO			
+518		BUNIT	str	ADU	%-10s		Unit of original pixel values	common	INIT	FIX	det	BUNIT			
+519		WCS-ORIG	str	TAO Toolkit	%-20s		Origin of the WCS value	IMAG	INIT	FIX	det	WCS-ORIG			
+600		COMMENT	str				--------- Date	common	INIT	FIX					
+601		TIMESYS	str	UTC	%-8s		Explicit time scale specification	common	INIT	FIX	observation	TIMESYS			
+602		DATE-OBS	str	2000-01-01	%-10s		Observation start date (yyyy-mmm-dd)	common	INIT	IntervalTaskSecond	observation	DATE-OBS			get_DATEOBS
+603		UT	str	00:00:00.000	%-12s		Typical UTC during exposure (HH:MM:SS.SSS)	common	MID	python					get_UT
+604		UT-STR	str	00:00:00.000	%-12s		UTC at start of exposure (HH:MM:SS.SSS)	common	STR	python					get_UT
+605		UT-END	str	00:00:00.000	%-12s		UTC at end of exposure (HH:MM:SS.SSS	common	END	python					get_UT
+606		UT1-UTC	float	-9.9999	%20.5f		difference between UT1 and UTC	common	MID	IntervalTaskSecond	observation	UT1-UTC		FITS.TAO.UT1-UTC	
+607		CLT	str	00:00:00.000	%-12s		Typical Hawaii Standard Time during exposure (HH:MM:SS.SSS)	common	MID	python					get_CLT
+608		CLT-STR	str	00:00:00.000	%-12s		HST at start of exposure (HH:MM:SS.SSS)	common	STR	python					get_CLT
+609		CLT-END	str	00:00:00.000	%-12s		HST at end of exposure (HH:MM:SS.SSS)	common	END	python					get_CLT
+610		LST	str	00:00:00.000	%-12s		Typical Local Sidereal Time during exposure (HH:MM:SS.SSS)	common	MID	python					get_LST
+611		LST-STR	str	00:00:00.000	%-12s		LST at start of exposure (HH:MM:SS.SSS)	common	STR	python					get_LST
+612		LST-END	str	00:00:00.000	%-12s		LST at end of exposure (HH:MM:SS.SSS)	common	END	python					get_LST
+613		MJD	float	50000.00000000	%20.8f		Typical Modified Julian Date during exposure	common	MID	python					get_MJD
+614		MJD-STR	float	50000.00000000	%20.8f		MJD at start of exposure	common	STR	python					get_MJD
+615		MJD-END	float	50000.00000000	%20.8f		MJD at end of exposure	common	END	python					get_MJD
+700		COMMENT	str				--------- Object	common	INIT	FIX					
+701		DATA-TYP	str	TBW	%-30s		Data type (OBJECT, FLAT, DARK, etc.)	common	INIT	ACQ_FRAME	observation	DATA-TYP			
+702		RADESYS	str	FK5	%-8s		Equatorial coordinate system	common	INIT	FIX	observation	RADESYS			
+703		OBJECT	str	TBW	%-30s		Target description	common	INIT	IntervalTaskSecond	observation	OBJECT		FITS.TRD.OBJECT	
+704		EQUINOX	float	2000.00	%20.3f	years	Standard FK5 (years)	common	INIT	IntervalTaskSecond	observation	EQUINOX		FITS.TAO.EQUINOX	
+705		RA	str	00:00:00.000	%-12s		RA of telescope pointing (HH:MM:SS.SSS)	common	INIT	IntervalTaskSecond	observation	RA		FITS.TAO.RA	
+706		RA2000	str	00:00:00.000	%-12s		RA(J2000) pointing (HH:MM:SS.SSS)	common	INIT	IntervalTaskSecond	observation	RA2000			calc_RA2000_DEC2000
+707		DEC	str	+00:00:00.000	%-12s		DEC of pointing (+/-DD:MM:SS.SS)	common	INIT	IntervalTaskSecond	observation	DEC		FITS.TAO.DEC	
+708		DEC2000	str	+00:00:00.000	%-12s		DEC(J2000) of pointing (+/-DD:MM:SS.SS)	common	INIT	IntervalTaskSecond	observation	DEC2000			calc_RA2000_DEC2000
+709		AZIMUTH	float	00.00000	%20.5f	degree	Azimuth of telescope pointing (degree)	common	MID	IntervalTaskSecond	observation	AZIMUTH		FITS.TAO.AZIMUTH	
+710		AZ-STR	float	00.00000	%20.5f	degree	Azimuth angle at exposure start (degree)	common	STR	IntervalTaskSecond	observation	AZIMUTH		FITS.TAO.AZIMUTH	
+711		AZ-END	float	00.00000	%20.5f	degree	Azimuth angle at exposure end (degree)	common	END	IntervalTaskSecond	observation	AZIMUTH		FITS.TAO.AZIMUTH	
+712		ALTITUDE	float	00.00000	%20.5f	degree	Altitude of telescope pointing (degree)	common	MID	IntervalTaskSecond	observation	ALTITUDE		FITS.TAO.ALTITUDE	
+713		ALT-STR	float	00.00000	%20.5f	degree	Altitude at start exposure (degree)	common	STR	IntervalTaskSecond	observation	ALTITUDE		FITS.TAO.ALTITUDE	
+714		ALT-END	float	00.00000	%20.5f	degree	Altitude at exposure end (degree)	common	END	IntervalTaskSecond	observation	ALTITUDE		FITS.TAO.ALTITUDE	
+715		AIRMASS	float	0.000	%20.3f		Typical air mass during exposure	common	MID	IntervalTaskSecond	observation	AIRMASS		FITS.TAO.AIRMASS	
+716		AIRM-STR	float	0.000	%20.3f		Air mass at exposure start	common	STR	IntervalTaskSecond	observation	AIRMASS		FITS.TAO.AIRMASS	
+717		AIRM-END	float	0.000	%20.3f		Air mass at exposure end	common	END	IntervalTaskSecond	observation	AIRMASS		FITS.TAO.AIRMASS	
+718		ZD	float	00.00000	%20.5f	degree	Zenith Distance at typical time (degree)	common	MID	IntervalTaskSecond	observation	ZD		FITS.TAO.ZD	
+719		ZD-STR	float	00.00000	%20.5f	degree	Zenith distance at exposure start (degree)	common	STR	IntervalTaskSecond	observation	ZD		FITS.TAO.ZD	
+720		ZD-END	float	00.00000	%20.5f	degree	Zenith distance at exposure end (degree)	common	END	IntervalTaskSecond	observation	ZD		FITS.TAO.ZD	
+721		SECZ	float	0.000	%20.3f		SEC(Zenith Distance) at typical time	common	MID	IntervalTaskSecond	observation	SECZ		FITS.TAO.SECZ	
+722		SECZ-STR	float	0.000	%20.3f		SEC(Zenith Distance) at exposure start	common	STR	IntervalTaskSecond	observation	SECZ		FITS.TAO.SECZ	
+723		SECZ-END	float	0.000	%20.3f		SEC(Zenith Distance) at exposure end	common	END	IntervalTaskSecond	observation	SECZ		FITS.TAO.SECZ	
+724		OBS-MOD	str	IMAG	%-30s		Observation Mode	common	INIT	IntervalTaskSecond	observation	OBS-MOD		FITS.TRD.OBS-MOD	
+900		COMMENT	str				--------- Spectroscopy	SPEC/SPECMOS	INIT	FIX					
+901		SLIT	str	TBW	%-20s		Identifier of the entrance slit used	SPEC/SPECMOS	INIT	FIX	instrument	SLIT			
+902		SLT-LEN	float	0.0	%20.3f	arcsec	Length of the slit used (arcsec)	SPEC/SPECMOS	INIT	FIX	instrument	SLT-LEN			
+903		SLT-PA	float	0.0	%20.1f	degree	Slit Position Angle (degree)	SPEC/SPECMOS	INIT	FIX	instrument	SLT-PA			
+904		SLT-WID	float	0.0	%20.3f	arcsec	Width of the slit used (arcsec)	SPEC/SPECMOS	INIT	FIX	instrument	SLT-WID			
+905		SLTCPIX1	float	0.0	%20.1f	pixel	Slit center projected on detector (pixel)	SPEC/SPECMOS	INIT	FIX	instrument	SLTCPIX1			
+906		SLTCPIX2	float	0.0	%20.1f	pixel	Slit center projected on detector (pixel)	SPEC/SPECMOS	INIT	FIX	instrument	SLTCPIX2			
+907		DISPAXIS	int	1	%20d		Dispersion axis in frame	SPEC/SPECMOS	INIT	SETUPOBE	det	DISPAXIS			
+908		DISPERSR	str	TBW	%-20s		Identifier of the disperser used	SPEC/SPECMOS	INIT	FIX	instrument	DISPERSR			
+909		WAV-MIN	float	-9999.9	%20.4f	nm	Shortest wavelen.focused on detector (nm)	SPEC/SPECMOS	INIT	SETUPOBE	det	WAV-MIN			
+910		WAV-MAX	float	-9999.9	%20.4f	nm	Longest wavelen. focused on detector (nm)	SPEC/SPECMOS	INIT	SETUPOBE	det	WAV-MAX			
+911		WAVELEN	float	-9999.9	%20.4f	nm	Wavelength at detector center (nm)	SPEC/SPECMOS	INIT	SETUPOBE	det	WAVELEN			
+1000		COMMENT	str				--------- Detector	common	INIT	FIX					
+1001		DETECTOR	str	hpk2015 {SCA_ID} SCI	%-20s		Detector name	common	INIT	FIX	det	DETECTOR			
+1002		DETPXSZ1	float	0.018	%20.4f	mm	Detector pixel size in axis1 (mm)	common	INIT	FIX	det	DETPXSZ1			
+1003		DETPXSZ2	float	0.018	%20.4f	mm	Detector pixel size in axis2 (mm)	common	INIT	FIX	det	DETPXSZ2			
+1004		DET-SMPL	str	1	%-20s		0- Ramp mode; 1- Fowler sampling mode	common	INIT	SET_DET	det	SMPLMODE			
+1005		DET-RST	int	1	%20d		Number of resets before integration	common	INIT	SET_DET	det	NRESET			
+1006		DET-NSMP	int	1	%20d		number of ramps	common	INIT	SET_DET	det	NSURAMP			
+1007		COADD	int	1	%20d		Frame is created by # of sub-exposures	common	INIT	FIX	det	COADD			
+1008		EXP1TIME	float	-9999	%20.3f	sec	One exposure time (sec)	common	INIT	SET_DET	det	EXP_TIME			
+1009		EXPTIME	float	-9999	%20.2f	sec	Integration time of one frame = EXPTIME * COADD	common	INIT	SET_DET	det	T_PIX			
+1010		DET-TMP	float	-9999	%20.2f	K	Detector temperature (K)	common	INIT	cron	tpr_325	CH01_TEMP			
+1011		GAIN	float	1.0	%20.3f	electron/ADU	AD conversion factor (electron/ADU)	common	INIT	FIX	det	GAIN			
+1012		PRD-MIN1	int	-9999	%20d	pixel	Start X pos. of partial readout (pixel)	common	INIT	FIX	det	PRD-MIN1			
+1013		PRD-RNG1	int	-9999	%20d	pixel	X Range of the partial readout (pixel)	common	INIT	FIX	det	PRD-RNG1			
+1014		PRD-MIN2	int	-9999	%20d	pixel	Start pos Y of partial readout (pixel)	common	INIT	FIX	det	PRD-MIN2			
+1015		PRD-RNG2	int	-9999	%20d	pixel	Y range of the partial readout (pixel)	common	INIT	FIX	det	PRD-RNG2			
+1016		EFP-MIN1	int	-9999	%20d	pixel	Start X pos. of effective area (pixel)	common	INIT	FIX	det	EFP-MIN1			
+1017		EFP-RNG1	int	-9999	%20d	pixel	X Range of overscan area (pixel)	common	INIT	FIX	det	EFP-RNG1			
+1018		EFP-MIN2	int	-9999	%20d	pixel	Start Y pos. of effective area (pixel)	common	INIT	FIX	det	EFP-MIN2			
+1019		EFP-RNG2	int	-9999	%20d	pixel	Y Range of overscan area (pixel)	common	INIT	FIX	det	EFP-RNG2			
+1020		BIN-FCT1	int	1	%20d	pixel	Binning factor of X axis (pixel)	common	INIT	FIX	det	BIN-FCT1			
+1021		BIN-FCT2	int	1	%20d	pixel	Binning factor of Y axis (pixel)	common	INIT	FIX	det	BIN-FCT2			
+1100		COMMENT	str				--------- Weather Condition	common	INIT	FIX					
+1101		WEATHER	str	CLEAR	%-30s		Weather condition at exposure start	common	INIT	IntervalTaskSecond	observation	WEATHER		FITS.TAO.WEATHER	
+1102		SEEING	float	-9999	%20.2f		StarSize FWHM at telescope focus (arcsec)	common	INIT	IntervalTaskSecond	observation	SEEING		FITS.TAO.SEEING	
+1103		DOM-WND	float	-9999	%20.2f	m/s	Wind velocity in the dome (m/s)	common	MID	IntervalTaskSecond	observation	DOM-WND		FITS.TAO.DOM-WND	
+1104		DOM-WSTR	float	-9999	%20.2f	m/s	Wind velocity in dome at exposure start (m/s)	common	STR	IntervalTaskSecond	observation	DOM-WND		FITS.TAO.DOM-WND	
+1105		DOM-WEND	float	-9999	%20.2f	m/s	Wind velocity in dome at exposure end (m/s)	common	END	IntervalTaskSecond	observation	DOM-WND		FITS.TAO.DOM-WND	
+1106		DOM-TMP	float	-9999	%20.2f	K	Temperature measured in the dome (K)	common	MID	IntervalTaskSecond	observation	DOM-TMP		FITS.TAO.DOM-TMP	
+1107		DOM-TSTR	float	-9999	%20.2f	K	Temp. in the dome at exposure start (K)	common	STR	IntervalTaskSecond	observation	DOM-TMP		FITS.TAO.DOM-TMP	
+1108		DOM-TEND	float	-9999	%20.2f	K	Temp. in the dome at exposure end (K)	common	END	IntervalTaskSecond	observation	DOM-TMP		FITS.TAO.DOM-TMP	
+1109		DOM-HUM	float	-9999	%20.1f	%	Humidity measured in the dome	common	MID	IntervalTaskSecond	observation	DOM-HUM		FITS.TAO.DOM-HUM	
+1110		DOM-HSTR	float	-9999	%20.1f	%	Humidity in the dome at exposure start (%)	common	STR	IntervalTaskSecond	observation	DOM-HUM		FITS.TAO.DOM-HUM	
+1111		DOM-HEND	float	-9999	%20.1f	%	Humidity in the dome at exposure end (%)	common	END	IntervalTaskSecond	observation	DOM-HUM		FITS.TAO.DOM-HUM	
+1112		DOM-PRS	float	-9999	%20.2f	hPa	Atmospheric pressure in the Dome (hpa)	common	MID	IntervalTaskSecond	observation	DOM-PRS		FITS.TAO.DOM-PRS	
+1113		DOM-PSTR	float	-9999	%20.2f	hPa	Atmospheric pressure in the Dome at exposure start (hpa)	common	STR	IntervalTaskSecond	observation	DOM-PRS		FITS.TAO.DOM-PRS	
+1114		DOM-PEND	float	-9999	%20.2f	hPa	Atmospheric pressure in the Dome at exposure end (hpa)	common	END	IntervalTaskSecond	observation	DOM-PRS		FITS.TAO.DOM-PRS	
+1115		OUT-WND	float	-9999	%20.2f	m/s	Wind velocity outside of dome (m/s)	common	MID	IntervalTaskSecond	observation	OUT-WND		FITS.TAO.OUT-WND	
+1116		OUT-WSTR	float	-9999	%20.2f	m/s	Outside wind velocity at exposure start (m/s)	common	STR	IntervalTaskSecond	observation	OUT-WND		FITS.TAO.OUT-WND	
+1117		OUT-WEND	float	-9999	%20.2f	m/s	Outside wind velocity at exposure end (m/s)	common	END	IntervalTaskSecond	observation	OUT-WND		FITS.TAO.OUT-WND	
+1118		OUT-TMP	float	-9999	%20.2f	K	Temperature measured outside of dome (K)	common	MID	IntervalTaskSecond	observation	OUT-TMP		FITS.TAO.OUT-TMP	
+1119		OUT-TSTR	float	-9999	%20.2f	K	Outside temperature at exposure start (K)	common	STR	IntervalTaskSecond	observation	OUT-TMP		FITS.TAO.OUT-TMP	
+1120		OUT-TEND	float	-9999	%20.2f	K	Outside temperature at exposure end (K)	common	END	IntervalTaskSecond	observation	OUT-TMP		FITS.TAO.OUT-TMP	
+1121		OUT-HUM	float	-9999	%20.1f	%	Humidity measured outside of dome (%)	common	MID	IntervalTaskSecond	observation	OUT-HUM		FITS.TAO.OUT-HUM	
+1122		OUT-HSTR	float	-9999	%20.1f	%	Outside humidity at exposure start (%)	common	STR	IntervalTaskSecond	observation	OUT-HUM		FITS.TAO.OUT-HUM	
+1123		OUT-HEND	float	-9999	%20.1f	%	Outside humidity at exposure end (%)	common	END	IntervalTaskSecond	observation	OUT-HUM		FITS.TAO.OUT-HUM	
+1124		OUT-PRS	float	-9999	%20.2f	hPa	Atmospheric pressure outside dome (hpa)	common	MID	IntervalTaskSecond	observation	OUT-PRS		FITS.TAO.OUT-PRS	
+1125		OUT-PSTR	float	-9999	%20.2f	hPa	Outside Atmos.press. at exposure start (hpa)	common	STR	IntervalTaskSecond	observation	OUT-PRS		FITS.TAO.OUT-PRS	
+1126		OUT-PEND	float	-9999	%20.2f	hPa	Outside Atmos.press. at exposure end (hpa)	common	END	IntervalTaskSecond	observation	OUT-PRS		FITS.TAO.OUT-PRS	
+1200		COMMENT	str				--------- Subaru Device Dependent header Block for SWIMS	common	INIT	FIX					
+1300		COMMENT	str				--------- Geodetic Information	common	INIT	FIX					
+1301		1_OBSLAT	float	-9999	%8.4f	degree	Telescope geodetic latitude (degree)	common	INIT	FIX	observation	OBSLAT			
+1302		1_OBSLON	float	-9999	%6.3f	degree	Telescope geodetic longitude (degree)	common	INIT	FIX	observation	OBSLON			
+1303		1_OBSALT	float	-9999	%6.1f	m	Telescope altitude (m)	common	INIT	FIX	observation	OBSALT			
+1400		COMMENT	str				--------- Telescope and Dome	common	INIT	FIX					
+1401		1_M1CVR	str	TBW	%-8s		M1 cover position	common	INIT	IntervalTaskSecond	observation	M1COVER		STATL.M1COVER_POS	
+1402		1_CELCVR	str	TBW	%-8s		Cell cover position	common	INIT	IntervalTaskSecond	observation	CELLCOVER		STATL.CELLCOVER_POS	
+1403		1_DOMPOS	float	-9999	%9.6f	degree	Dome position (degree)	common	INIT	IntervalTaskSecond	observation	DOME_POS		STATS.DOMEDRIVE_POS	
+1404		1_DOMSLT	str	TBW	%-8s		Dome slit position (OPEN/CLOSE)	common	INIT	IntervalTaskSecond	observation	DOME_SLIT		STATL.DOMESHUTER_POS	
+1800		COMMENT	str				--------- Temperature	common	INIT	FIX					
+1809		1_TWSF	float	+00.000	%6.3f	K	Temperature at WorkSurface (K)	common	INIT	cron	tpr_325	CH02_TEMP			
+1820		1_TDET	float	+00.000	%6.3f	K	Temperature at Detector Mount (K)	common	INIT	cron	tpr_325	CH01_TEMP			
+1900		COMMENT	str				--------- Vacuum level	common	INIT	FIX					
+1901		1_P	float	1e-10	%5.3e	Torr	Vacuum level at the dewar (Torr)	common	INIT	cron	vac	CH01_VALUE			
+2000		COMMENT	str				--------- Detector	common	INIT	FIX					
+2001		1_RAWDIR	str	/dummy/	%-80s		directory to raw image data	common	END	ACQ_FRAME	det	RAWDIR			
+2002		1_M6	int	-9999	%5d		M6 CMOS serial number	common	INIT	FIX	det	M6-ID			
+2003		1_GESICA	int	-9999	%5d		GESICA serial number	common	INIT	FIX	det	GESICA-ID			
+2004		1_IRCA	int	-9999	%5d		IRCA serial number	common	INIT	FIX	det	IRCA-ID			
+2100		COMMENT	str				--------- Messia Original Header	common	INIT	FIX					
+2101		1_DETID	str	0	%5d		Detector ID	common	M6	Messia6_Header			DETID		
+2102		1_GMTS	int	-9999	%10d	s	Unix time	common	M6	Messia6_Header			GMTS		
+2103		1_GMT	str	00:00:00.000	%-12s		Greenwich Mean Time	common	M6	Messia6_Header			GMT		
+2104		1_LST	str	00:00:00.000	%-12s		Local Sidereal Time	common	M6	Messia6_Header			LST		
+2105		1_NSUR	int	-9999	%20d		number of the sample up the ramp	common	M6	Messia6_Header			NSURAMP		
+2106		1_NSMPL	int	-9999	%20d		number of the fowler sampling	common	M6	Messia6_Header			NSAMPLE		
+2107		1_NOSMPL	int	-9999	%20d		number of the oversampling	common	M6	Messia6_Header			NOSAMPLE		
+2108		1_SPV	str	hpk2015_red	%-20s		SPV	common	M6	Messia6_Header			SPV		
+2109		1_EXP01S	int	-9999	%20d	s	exporsure time in 0.1s	common	M6	Messia6_Header			EXP_01S		
+2110		1_NOUT	int	8	%20d		n port output	common	M6	Messia6_Header			NOUT		
+2111		1_PDB	float	-9999	%20.3f	V	PDB	common	M6	Messia6_Header			IRCA_PDB		
+2112		1_VDD	float	-9999	%20.3f	V	VDD	common	M6	Messia6_Header			IRCA_VDD		
+2113		1_VB1	float	-9999	%20.3f	V	VB1	common	M6	Messia6_Header			IRCA_VB1		
+2114		1_ICS	float	-9999	%20.3f	V	ICS	common	M6	Messia6_Header			IRCA_ICS		
+2115		1_VRP	float	-9999	%20.3f	V	VRP	common	M6	Messia6_Header			IRCA_VRP		
+2116		1_OFF	float	-9999	%20.6f	V	OFF	common	M6	Messia6_Header			IRCA_OFF		
+2117		1_BT	float	-9999	%20.5f	V	BT	common	M6	Messia6_Header			IRCA_BT		
+2118		1_PT0	float	-9999	%20.3f	V	PT0	common	M6	Messia6_Header			IRCA_PT0		
+2300		COMMENT	str				--------- Observing time	common	INIT	FIX					
+2301		1_T_OBS	float	-9999	%6.3f	sec	total observing time (sec)	common	INIT	SET_HPK	det	T_OBS			
+2302		1_T_PIX	float	-9999	%6.3f	sec	integration time per pixel (sec)	common	INIT	SET_HPK	det	T_PIX			
+2303		1_T_OVH	float	-9999	%6.3f	sec	overhead (sec)	common	INIT	SET_HPK	det	T_OVH			
+2304		1_T_CMD	float	-9999	%6.3f	sec	commanded T_PIX (sec)	common	INIT	SET_HPK	det	T_CMD			
+															

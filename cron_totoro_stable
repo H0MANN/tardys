@@ -1,0 +1,61 @@
+MAILTO="konishi@ioa.s.u-tokyo.ac.jp"
+#MAILTO=""
+
+###########################################################################
+## Pfeiffer Monitor
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/vac/exec.py --loglevel=20 read 2>&1 | grep -e "| W |" -e "| E |"
+
+
+## Lakeshore Monitor
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/tpr_218b/exec.py --loglevel=20 read 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/tpr_218a/exec.py --loglevel=20 read 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/tpr_331/exec.py --loglevel=20 read 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/tpr_332/exec.py --loglevel=20 read 2>&1 | grep -e "| W |" -e "| E |"
+
+
+## STS
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${DEVICEHOME}/STS/exec.py 2>&1 | grep -e "| W |" -e "| E |"
+
+
+###########################################################################
+## Pfeiffer Rate
+* * * * * . /home/anir/.bashrc;sleep 5 && ${PYTHON27} ${DEVICEHOME}/vac/exec.py calc_rate 15 2>&1 | grep -e "| W |" -e "| E |"
+
+
+## Lakeshore Rate
+* * * * * . /home/anir/.bashrc;sleep 5 && ${PYTHON27} ${DEVICEHOME}/tpr_218a/exec.py calc_rate 15 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;sleep 5 && ${PYTHON27} ${DEVICEHOME}/tpr_218b/exec.py calc_rate 15 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;sleep 5 && ${PYTHON27} ${DEVICEHOME}/tpr_331/exec.py calc_rate 15 2>&1 | grep -e "| W |" -e "| E |"
+* * * * * . /home/anir/.bashrc;sleep 5 && ${PYTHON27} ${DEVICEHOME}/tpr_332/exec.py calc_rate 15 2>&1 | grep -e "| W |" -e "| E |"
+
+
+###########################################################################
+## Check_obcp
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_obcp.py 2>&1 | grep -e "| W |" -e "| E |"
+
+## Check_nfs
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_nfs.py 2>&1 | grep -e "| W |" -e "| E |"
+
+## Check_cifs
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_cifs.py 2>&1 | grep -e "| W |" -e "| E |"
+
+## Check_ping
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_ping.py 2>&1 | grep -e "| W |" -e "| E |"
+
+## Check_dm
+* * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_dm.py 2>&1 | grep -e "| W |" -e "| E |"
+
+## Check_hxrg_ide
+*/5 * * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/check_hxrg_ide.py 2>&1 | grep -e "| W |" -e "| E |"
+
+
+## Slackbot (every 6 hours)
+6 */6 * * * . /home/anir/.bashrc;${PYTHON27} ${INSTHOME}/slackbot_tpr_vac.py 2>&1 | grep -e "| W |" -e "| E |"
+
+
+###########################################################################
+## Email notification (every 6 hours)
+#5 * * * * . /home/anir/.bashrc;/bin/sh -l ${HOME}/konishi/alert_20170420.sh
+5 * * * * . /home/anir/.bashrc;/bin/sh -l ${INSTHOME}/alert_20200303.sh
+
+

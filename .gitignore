@@ -1,0 +1,18 @@
+##
+## 2016.04.25 M.Konishi
+##
+## Git Root Folder = ~/taoics/swims
+##
+
+# Password file
+/.passwd*
+
+# garbage files
+*~
+
+# pyc files
+*pyc
+
+# STS module
+/device/STS/STSlib.py
+

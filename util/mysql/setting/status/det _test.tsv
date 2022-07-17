@@ -1,0 +1,194 @@
+## Optical Arm
+OPT_ARM	##blue##
+DET_CH	##1##
+
+
+## Network Mount
+CIFS_MOUNT	OK
+
+
+## Server
+DM_STATUS	##DOWN##
+IDE_STATUS	##DOWN##
+
+
+## HXRG Status
+INITIALIZED	##False##
+POWERDOWN	##False##
+
+
+## Device IDs ##
+#H2RG-ID	#0  ## defined in IDE Header
+#ASIC-ID	#0  ## defined in IDE Header
+JADE2-ID	##INT##
+USB-ID	##INT##
+DC5V-ID	##INT##
+SAM-ID	##INT##
+DETECTOR	##STR##
+
+
+## Raw data Directory ##
+RAWDIR	/tmp/
+
+
+## FITS Frame Numbers ##
+FRAMEID	TRDA00000000
+FRAMEID_ENG	TRDE00053091
+EXP-ID	##STR##
+DSET-ID	##STR##
+DPOS-ID	##STR##
+
+
+## Observing Times ##
+T_OBS	-9999
+T_PIX	-9999
+T_OVH	-9999
+T_CMD	-9999
+
+
+## Required FITS cards ##
+CDELT1	##-0.0000267##	# pixel_scale in deg/pix
+CDELT2	##0.0000267##	# pixel_scale in deg/pix
+CTYPE1	##RA---TAN##
+CTYPE2	##DEC--TAN##
+CUNIT1	##deg##
+CUNIT2	##deg##
+CRPIX1	##-61.233##
+CRPIX2	##976.340##
+
+CRVAL1	##0.0##	# pointing RA
+CRVAL2	##0.0##	# pointing Dec
+CD1_1	##-2.6469436196615E-5##
+CD1_2	##-4.9962325154866E-8##
+CD2_1	##-7.4604107089294E-8##
+CD2_2	##2.64773370249434E-5##
+
+LONGPOLE	##180.0##
+WCS-ORIG	##astropy##
+DETPXSZ1	##0.018##
+DETPXSZ2	##0.018##
+#DET-NSMP    1  # instead, refered bFS.
+COADD	     ##1##
+GAIN	##2.78##
+PRD-MIN1	##1##
+PRD-RNG1	##2048##
+PRD-MIN2	##1##
+PRD-RNG2	##2048##
+EFP-MIN1	##5##
+EFP-RNG1	##2040##
+EFP-MIN2	##5##
+EFP-RNG2	##2040##
+BIN-FCT1	##1##
+BIN-FCT2	##1##
+
+BSCALE	##1.0##
+BZERO	##0.000000##
+BUNIT	##ADU##
+
+
+## From get_config ##
+nResets	 0
+nReads	 1
+bOutputRstFrm	 0
+bPulseLED	 0
+bClkSCAInDropFrm	 1
+nIdleModeOpt	 1
+nRamps	 1
+nGroups	 1
+nDrops	 1
+nRowEndDelay	 0
+nFrmEndDelay	 0
+fsExpTime	 0.1664
+muxType	 2
+nOutputs	 32
+bWarm	 0
+bKTCRemoval	 0
+bRstPerRow	 0
+bEnhanceClk	 1
+bDetectorGlbRst	 0
+bWinMode	 0
+bFS	 0
+nPreampInpScheme	 1
+nPreampGain	 8
+nBufCurrentMode	 0
+preampInput	 h4502
+winXStart	 0
+winXStop	 99
+winYStart	 0
+winYStop	 99
+
+
+## From get_asic_power ##
+VDDA1_V	 3.34999
+VDDA1_I	 68.0319
+VDDA2_V	 0.128439
+VDDA2_I	 -0.00332447
+VDDA3_V	 0.0266879
+VDDA3_I	 -0.00332447
+VDDA4_V	 0.0226878
+VDDA4_I	 -0.00332447
+VRef1_V	 3.30405
+VRef1_I	 0.0209123
+VRef2_V	 0.00062501
+VRef2_I	 -0.00197285
+VRef3_V	 0.000437507
+VRef3_I	 -0.000986427
+VRef4_V	 0.000500008
+VRef4_I	 0.000197285
+VDD3p3_1_V	 3.32155
+VDD3p3_1_I	 6.71875
+VDD3p3_2_V	 3.32118
+VDD3p3_2_I	 0.738525
+VDD3p3_3_V	 3.32118
+VDD3p3_3_I	 0.724284
+VDD3p3_4_V	 3.32118
+VDD3p3_4_I	 0.731608
+VDD1_V	 2.52079
+VDD1_I	 9.17318
+VDD2_V	 2.52023
+VDD2_I	 0.869954
+VDD3_V	 2.52016
+VDD3_I	 0.870768
+VDD4_V	 2.5201
+VDD4_I	 0.877279
+VDDIO1_V	 3.16486
+VDDIO1_I	 90.1923
+VDDIO2_V	 3.1593
+VDDIO2_I	 20.1803
+VDDIO3_V	 3.15961
+VDDIO3_I	 20.1202
+VDDIO4_V	 3.15924
+VDDIO4_I	 20.1923
+
+
+## From get_telemetry ##
+VReset_V	 0.424112
+VReset_I	 0.00791002
+DSub_V	 0.696301
+DSub_I	 0.118292
+VBiasGate_V	 2.10309
+VBiasGate_I	 0.000686888
+VBiasPower_V	 3.10542
+VBiasPower_I	 0.0530376
+CellDrain_V	 0.0244188
+CellDrain_I	 0.326223
+Drain_V	 0.00614125
+Drain_I	 -0.0240411
+VDDA_V	 3.23827
+VDDA_I	 -0.000932206
+VDD_V	 3.27014
+VDD_I	 0.0147681
+RefSample_V	 0.443559
+RefSample_I	 -0.018546
+RefColBuf_V	 0.328557
+RefColBuf_I	 -0.0196254
+VNBias_V	 0.0273432
+VNBias_I	 -0.0745765
+VPBias_V	 3.11741
+VPBias_I	 0.00348351
+VNCasc_V	 0.00116976
+VNCasc_I	 -0.0246299
+VPCasc_V	 3.20069
+VPCasc_I	 0
+VBiasOutBuf_V	 0.0263196
+VBiasOutBuf_I	 -0.165589

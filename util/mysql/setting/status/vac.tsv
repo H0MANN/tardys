@@ -1,0 +1,12 @@
+RAWSTATUS	 
+
+CH01	 name_prefix
+CH01_NAME	 CH01
+CH01_VALUE	 100
+CH01_RATE	##NODATA##
+
+#CH02	 name_prefix
+#CH02_NAME	 Throat
+#CH02_VALUE	 100
+#CH02_RATE	##NODATA##
+

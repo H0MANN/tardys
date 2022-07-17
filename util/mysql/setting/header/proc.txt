@@ -1,0 +1,6 @@
+sh make_det_tsv.sh
+
+python2.7 create_header_table.py det_b1_master.tsv
+python2.7 create_header_table.py det_b2_master.tsv
+python2.7 create_header_table.py det_r1_master.tsv
+python2.7 create_header_table.py det_r2_master.tsv
