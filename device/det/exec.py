@@ -7,7 +7,7 @@ from common import Common
 from decimal import Decimal
 import logging, subprocess, argparse
 import datetime
-import threading.Thread
+import multiprocessing as mp
 
 
 class DetError(Exception):
@@ -146,6 +146,8 @@ class Det:
         self.interface.tardys_daq(self.messia, self.gesica, self.messiadir, *setting, rawdir, frame_id)
 
         #rawdir, self.rsltdir, frame_id ,exp_time, sample_mode wo watasu
+
+        p = mp.Process(target=self.detlib.create_fits, args=(rawdir, self.rsltdir, frame_id ,exp_time, sample_mode))
 
         return rawdir, frame_id
 

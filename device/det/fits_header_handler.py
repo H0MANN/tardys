@@ -562,11 +562,13 @@ if __name__ == "__main__":
     h.logger.setLevel(20)
     h.daemon = True
 
+    #プロセスが始まってから
     h.start()
 
     h.process_init()
     time.sleep(2)
 
+    #process_initが始まってから2秒したらprocess_strをsetし、イベント発生
     h.process_str_async()
     time.sleep(1)
     
